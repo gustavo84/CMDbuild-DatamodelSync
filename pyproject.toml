@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cmdbuild-etl"
+version = "0.1.0"
+description = "ETL incremental para sincronizar entornos CMDBuild"
+authors = ["Gustavo Castro <gustavo@example.com>"]
+readme = "README.md"
+packages = [{ include = "cmdbuild_etl", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+
+[tool.poetry.scripts]
+cmdbuild-sync = "cmdbuild_etl.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
